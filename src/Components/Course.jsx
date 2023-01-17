@@ -1,18 +1,17 @@
 import { Link, useParams } from 'react-router-dom';
 import '../App.css';
-function Course(props) {
-	const { title, body, slug, price, discount, id } = props;
+function Course({ data }) {
+	const { title, body, slug, price, discount, id } = data;
 	const params = useParams();
+
 	return (
 		<div className='course'>
-			{!params.slug ? (
+			{!params.slug ? ( // if in courses pages or individual course page
 				<Link to={slug}>
 					<h2 className='link'>{title}</h2>
 				</Link>
 			) : (
-				<>
-					<h2 className='link'>{title}</h2>
-				</>
+				<h2 className='link'>{title}</h2>
 			)}
 
 			<p className='course-body'>{body}</p>

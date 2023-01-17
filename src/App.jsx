@@ -13,15 +13,15 @@ function App() {
 		<BrowserRouter>
 			<div className='App'>
 				<div className='container'>
-					<Routes>
-						<Route path='/react-router-project/' element={<MainLayout />}>
-							<Route index element={<Home />} />
-							<Route path='about' element={<About />} />
-							<Route path='contacts' element={<Contacts />} />
-							<Route path='courses' element={<Courses />}></Route>
-							<Route path='/courses/:slug' element={<SingleCourse />} />
-							<Route path='*' element={<NotFound />} />
-						</Route>
+					<Routes >
+							<Route path='/react-router-project' element={<MainLayout />}>
+								<Route index element={<Home />} />
+								<Route path='about' element={<About />} />
+								<Route path='contacts' element={<Contacts />} />
+								<Route path='courses' element={<Courses />}></Route>
+								<Route path='courses/:slug' element={<SingleCourse />} />
+								<Route path='*' element={<NotFound />} />
+							</Route>
 					</Routes>
 				</div>
 			</div>
