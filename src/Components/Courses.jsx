@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import data from '../data/courses';
 import Course from './Course';
 import '../App.css';

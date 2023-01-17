@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Outlet, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainLayout from './Layouts/MainLayout';
 import Home from './Components/Home';
 import About from './Components/About';
@@ -6,7 +6,6 @@ import Contacts from './Components/Contacts';
 import Courses from './Components/Courses';
 import SingleCourse from './Components/SingleCourse';
 import NotFound from './Components/NotFound';
-import data from './data/courses';
 import './App.css';
 
 function App() {
