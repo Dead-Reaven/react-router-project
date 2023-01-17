@@ -2,25 +2,12 @@ import { NavLink } from 'react-router-dom';
 const Menu = () => {
 	return (
 		<nav>
-			<NavLink
-				to='.'
-				end
-				className={({ isActive }) => (isActive ? 'activeLink' : 'link')}
-			>
+			<NavLink to='.' end>
 				Home
 			</NavLink>
-			<NavLink
-				to='about'
-				className={({ isActive }) => (isActive ? 'activeLink' : 'link')}
-			>
-				About
-			</NavLink>
-			<NavLink
-				to='contacts'
-				className={({ isActive }) => (isActive ? 'activeLink' : 'link')}
-			>
-				Contacts
-			</NavLink>
+			<NavLink to='about'>About</NavLink>
+			<NavLink to='contacts'>Contacts</NavLink>
+			<NavLink to='courses'>Courses</NavLink>
 		</nav>
 	);
 };

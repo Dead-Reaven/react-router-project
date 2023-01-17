@@ -16,69 +16,142 @@ nav {
 	margin: 15px 0px;
 }
 
-/* h1,
-a {
-	font-weight: 300;
-	font-size: 5vw;
+/*? used by default with Nanav> a */
+a{
+	text-decoration: none;
 }
-
+.active,
 nav > a {
-	padding: 0px 5vw;
-	color: white;
-	text-decoration: none;
-	transition: 0.3s;
-}
-
-nav > a:hover {
-	transform: scale(110%);
-	color: orange;
-} */
-
-/*? used by default with NavLink */
-/* .active {
-	transition: 0.1s;
-	font-weight: 700;
-	cursor: default;
-}
-.active:hover{
-	color: white;
-} */
-
-.activeLink,
-.link {
-	font-size: 5vw;
+	font-size: 4vw;
 	font-weight: 300;
 	cursor: default;
 	text-decoration: none;
-	padding: 0px 5vw;
+	padding: 0px 4.5vw;
 	color: white;
 	transition: 0.3s;
 }
 
-.activeLink{
+.active {
 	font-weight: 700;
 	transition: 0.1s;
-
 }
-.activeLink:hover {
+.active:hover {
 	color: white;
 }
-.link:hover {
+nav > a:hover {
 	transform: scale(110%);
 	color: rgb(255, 140, 0);
 }
 
-/* button {
-	padding: 15px;
-	border-radius: 1px solid white;
-	background: rgba(147, 147, 231, 0.681);
-	color: orange;
-	font-size: 5vw;
+.courses {
+	display: flex;
+	flex-wrap: wrap;
 }
-button:hover {
+.course {
+	display: flex;
+	flex-direction: column;
+	flex: 30% 0 1;
+	margin: 20px 1.5%;
+	background: white;
+	color: black;
+	padding: 15px;
+	border: 1px solid white;
+	border-radius: 15px;
+	transition: 0.1s;
+}
+
+.course:hover {
+	transform: scale(110%);
+}
+
+.link {
 	cursor: pointer;
 }
-button:active {
-	background: red;
+.icoBackArrowLink{
+	cursor: pointer;
+	font-size: 5vw;
 	color: white;
-} */
+}
+.icoBackArrowLink:hover{
+	color: red;
+}
+.footer-course {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-top: 15px;
+}
+.slug {
+	display: inline-block;
+	padding: 7px 15px;
+	font-weight: 400;
+	font-size: 2vmax;
+	color: black;
+	background: rgb(205, 201, 201);
+	border-radius: 5px;
+}
+h2 {
+	font-size: 2vmax;
+	color: red;
+}
+p {
+	font-size: 1.5vmax;
+}
+.course-body {
+	flex: auto 1 1;
+	text-align: justify;
+	padding: 10px 0px 0px 5px;
+}
+.price {
+	/* padding: 7px 15px; */
+}
+.discount {
+	text-decoration: line-through red;
+	color: black;
+}
+
+@media (max-width: 768px) {
+	.course {
+		flex: 48% 1 1;
+		margin: 15px 1%;
+		padding: 10px;
+	}
+	h2 {
+		font-size: 3.5vw;
+	}
+	.slug {
+		font-size: 3vw;
+	}
+	p {
+		font-size: 2.5vw;
+	}
+}
+@media (max-width: 500px) {
+	.course {
+		flex: auto 1 1;
+		padding: 10px;
+	}
+	h2 {
+		font-size: 5vw;
+	}
+	.slug {
+		font-size: 4vw;
+	}
+	p {
+		font-size: 3vw;
+	}
+}
+.courses.singleCourse > .course {
+	flex: auto 1 1;
+	height: 80vh;
+}
+.courses.singleCourse > .course:hover {
+	transform: none;
+}
+
+.courses.singleCourse  h2 {
+	font-size: 5vw;
+}
+.courses.singleCourse  p {
+	font-size: 3vmax;
+}
