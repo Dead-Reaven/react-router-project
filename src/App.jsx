@@ -14,7 +14,7 @@ function App() {
 			<div className='App'>
 				<div className='container'>
 					<Routes>
-						<Route path='https://dead-reaven.github.io/react-router-project/' element={<MainLayout />}>
+						<Route path='/react-router-project/' element={<MainLayout />}>
 							<Route index element={<Home />} />
 							<Route path='about' element={<About />} />
 							<Route path='contacts' element={<Contacts />} />
