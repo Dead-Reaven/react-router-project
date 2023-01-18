@@ -1,22 +1,24 @@
 import React from 'react';
 
 function SortSelect(props) {
-	const { sortByData, queryString, onChangeSelect } = props;
+	const { SORT_KEYS, sortKey, onChangeSelect } = props;
+	const options = SORT_KEYS.map((param) => (
+		<option key={param}>{param}</option>
+	));
 	return (
 		<div className='sort'>
 			<h2>
-				{!!queryString?.sort
-					? !!sortByData.find((param) => param === queryString.sort)
-						? `Sorted by ${queryString.sort}`
-						: 'Choose sort option'
+				{!!SORT_KEYS.includes(sortKey)
+					? `Sorted by ${sortKey}`
 					: 'Choose sort option'}
 			</h2>
 
-			<select id='selectSort' onChange={(e) => onChangeSelect(e)}>
+			<select
+				value={!!SORT_KEYS.includes(sortKey) ? sortKey : 'none'}
+				onChange={(e) => onChangeSelect(e)}
+			>
 				<option>none</option>
-				{sortByData.map((param) => (
-					<option key={param}>{param}</option>
-				))}
+				{options}
 			</select>
 		</div>
 	);
