@@ -19,8 +19,8 @@ function Course({ data }) {
 				<h2 className='slug '>{slug}</h2>
 				{!!discount ? (
 					<div>
-						<p className='discount'>{price}$</p>
-						<h2 className='price'>{price - discount}$</h2>
+						<p className='discount'>{price + discount}$</p>
+						<h2 className='price'>{price}$</h2>
 					</div>
 				) : (
 					<h2 className='price'>{price}$</h2>
