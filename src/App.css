@@ -43,6 +43,18 @@ nav > a:hover {
 	color: rgb(255, 140, 0);
 }
 
+.sort{
+	display: flex;
+	align-items: center;
+}
+.sort > h2{
+	color: white;
+	margin: 0px 15px;
+}
+.sort > select{
+	font-size: 20px;
+	padding: 10px;
+}
 .courses {
 	display: flex;
 	flex-wrap: wrap;

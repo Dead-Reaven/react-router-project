@@ -1,15 +1,19 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs';
 import Course from './Course';
 import data from '../data/courses';
+import { useEffect } from 'react';
 import '../App.css';
-import NotFound from './NotFound';
 
 function SingleCourse() {
 	const { slug } = useParams();
-	const [course] = data.filter((el) => el.slug === slug);
-	
-	if (!course) return <NotFound />;
+	const course = data.find((el) => el.slug === slug);
+	const navigate = useNavigate();
+	useEffect(() => {
+		// this function will be called every time when 'course' will be chenged
+		//return user to relative link: /courses
+		if (!course) navigate('..', { relative: 'path' });
+	}, [course, navigate]);
 
 	return (
 		<div>
@@ -17,7 +21,7 @@ function SingleCourse() {
 				<BsArrowLeft className='icoBackArrowLink' />
 			</Link>
 			<div className='courses singleCourse'>
-				<Course data={course} />
+				<Course data={!!course && course} />
 			</div>
 		</div>
 	);
